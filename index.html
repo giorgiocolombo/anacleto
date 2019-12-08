@@ -11,9 +11,10 @@
 <body>
     <header class="header">
         <div class="header_opacity"></div>
-        <nav class="menu">
+        <div class="hamb"><img src="img/menu.svg" alt="" width="25px" onclick="aprimenu()"></div>
+        <nav class="menu" id="navmenu">
             <div class="blur"></div>
-            <a href="" class="active">store</a>
+            <a href="index.html" class="active">store</a>
             <a href="">Nuovi arrivi</a>
             <a href="">Promozioni</a>
             <a href=""><img src="img/carrello.svg" alt="carrello" width="25px"></a>
@@ -73,7 +74,18 @@
         
     </main>
     <footer class="footer">
-        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex, aspernatur eligendi ea maiores laudantium voluptates labore ipsam ullam quo aliquam mollitia totam libero fugit eos assumenda saepe illo cum, doloremque optio voluptas iure odit et. Sed, laudantium vero nobis, dolor non, adipisci quaerat explicabo dolores exercitationem iusto incidunt! Nihil culpa iste officia architecto aspernatur voluptatibus obcaecati corporis enim ratione veritatis suscipit impedit, molestias dolorum delectus doloremque laudantium ex autem perferendis maiores sit, fugiat iure neque. Sunt modi excepturi reiciendis iusto labore ipsam iure soluta at! Animi obcaecati laudantium dolorum est et sapiente exercitationem reiciendis voluptas. Natus molestias reprehenderit dolore quisquam!</p>
     </footer>
+
+    <script>
+            function aprimenu(){
+                var x = document.getElementById("navmenu");
+                if (x.style.display === "flex") {
+                        x.style.display = "none";
+                } else {
+                        x.style.display = "flex";
+                }
+            }
+    </script>
 </body>
 </html>

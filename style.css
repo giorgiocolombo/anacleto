@@ -78,29 +78,37 @@ header nav a:hover {
     font-family: 'Dancing Script', cursive;
     text-shadow: 1px 1px 50px #000;
 }
+.hamb {
+    position: absolute;
+    z-index: 9999;
+    top: 1.7rem;
+    right: 50px;
+    display: none;
+}
 
         /* MAIN */
 
 .products_list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 5rem;
+    grid-row-gap: 10rem;
     margin: 8rem auto;
-    max-width: 70%;
     justify-items: center;
+    max-height: auto;
 }
 
 .product{
-    width: 300px;
+    width: 60%;
+    height: auto;
     position: relative;
 }
 .product img {
     object-fit: cover;
-    width: 300px;
+    width: 100%;
     height: 250px;
 }
 .nome_prodotto{
-    width: 300px;
+    width: 100%;
     height: 250px;
     background-color: rgba(0, 0, 0, 0.623);
     position: absolute;
@@ -139,7 +147,13 @@ header nav a:hover {
 
 footer{
     background-color: #333;
-    height: 300px;
+    color: white;
+}
+footer p {
+    width: 85%;
+    margin: auto auto;
+    padding: 2rem;
+    text-align: justify;
 }
 
 
@@ -149,10 +163,13 @@ footer{
         /* PRODOTTO */
 
 .header_single{
-    height: 70px;
+    height: 85px;
 }
 .header_single .statement {
     display: none;
+}
+.menu_single{
+    height: 85px;
 }
 .immagine{
     grid-area: img;
@@ -177,8 +194,7 @@ footer{
     "img prezzo"
     "img descrizione"
     "img bottone";
-    max-width: 70%;
-    margin: 4rem auto;
+    margin: 4rem 4rem;
     gap: 2rem;
 
 }
@@ -209,9 +225,57 @@ footer{
 }
 
 .suggeriti{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    display: flex;
     overflow-x: scroll;
-    gap: 2rem;
     margin: 8rem 2rem 4rem 2rem;
+}
+.suggeriti .product {
+    margin: 2rem;
+    border: 2px solid red;
+}
+
+
+
+
+/* MEDIA QUERY */
+    /* INDEX */
+@media(max-width:1024px) {
+    .products_list{
+        grid-template-columns: 1fr 1fr;
+    }
+    .statement {
+        font-size: 3rem;
+    }
+    .prodotto_single{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .prodotto_single > *{
+        width: 100%;
+    }
+}
+@media(max-width:768px) {
+    .products_list{
+        grid-template-columns: 1fr;
+    }
+    .hamb{
+        display: block;
+    }
+    .header nav {
+        background-color: #000;
+        height: auto;
+        z-index: 999;
+        display: none;
+        position: fixed;
+    }
+    .header nav a {
+        width: 100%;
+        text-align: center;
+        margin: 2rem;
+    }
+    .active {
+        border: none;
+        opacity: 0.6;
+    }
+    
 }
